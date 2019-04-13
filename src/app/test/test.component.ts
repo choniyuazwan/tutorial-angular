@@ -6,25 +6,22 @@ import { Component, OnInit } from '@angular/core';
     <h2>
       Welcome {{name}}
     </h2>
-    <h2>
-      {{2+2}}
-    </h2>
-    <h2>
-      {{"Welcome " + name}}
-    </h2>
-    <h2>{{name.length}}</h2>
-    <h2>{{name.toUpperCase()}}</h2>
-    <h2>{{siteUrl}}</h2>
+    <input [id]="myId" type="text" value="azwan">
+    <input disabled id={{myId}} type="text" value="azwan">
+    <input disabled="false" id={{myId}} type="text" value="azwan">
+    <input disabled="{{false}}" id={{myId}} type="text" value="azwan">
+    <input [disabled]="false" id={{myId}} type="text" value="azwan">
+    <input [disabled]="true" id={{myId}} type="text" value="azwan">
+    <input [disabled]="isDisabled" id={{myId}} type="text" value="azwan">
+    <input bind-disabled="isDisabled" id={{myId}} type="text" value="azwan">
   `,
-  styleUrls: ['./test.component.css']
+  styles: []
 })
 export class TestComponent implements OnInit {
 
   public name =  "Codevolution";
-  public siteUrl = window.location.href;
-  greetUser() {
-    return "Hello" + this.name;
-  }
+  public myId = "testId";
+  public isDisabled = false;
 
   constructor() { }
 
