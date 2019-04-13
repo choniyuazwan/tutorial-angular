@@ -6,22 +6,36 @@ import { Component, OnInit } from '@angular/core';
     <h2>
       Welcome {{name}}
     </h2>
-    <input [id]="myId" type="text" value="azwan">
-    <input disabled id={{myId}} type="text" value="azwan">
-    <input disabled="false" id={{myId}} type="text" value="azwan">
-    <input disabled="{{false}}" id={{myId}} type="text" value="azwan">
-    <input [disabled]="false" id={{myId}} type="text" value="azwan">
-    <input [disabled]="true" id={{myId}} type="text" value="azwan">
-    <input [disabled]="isDisabled" id={{myId}} type="text" value="azwan">
-    <input bind-disabled="isDisabled" id={{myId}} type="text" value="azwan">
+    <h2 class="text-success">Azwan</h2>
+    <h2 [class]="successClass">Azwan</h2>
+
+    <h2 class="successClass" [class]="successClass">Azwan</h2>
+    <h2 [class.text-danger]="hasError">Azwan</h2>
+    <h2 [ngClass]="messageClasses">Azwan</h2>
   `,
-  styles: []
+  styles: [`
+    .text-success {
+      color: green;
+    }
+    .text-danger {
+      color: red;
+    }
+    .text-special {
+      font-style: italic;
+    }
+  `]
 })
 export class TestComponent implements OnInit {
 
-  public name =  "Codevolution";
-  public myId = "testId";
-  public isDisabled = false;
+  public name =  "Azwan";
+  public successClass = "text-success";
+  public hasError = true;
+  public isSpecial = true;
+  public messageClasses = {
+    "text-success": !this.hasError,
+    "text-danger": this.hasError,
+    "text-special": this.isSpecial
+  }
 
   constructor() { }
 
