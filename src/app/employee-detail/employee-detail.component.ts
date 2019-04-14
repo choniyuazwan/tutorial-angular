@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'employee-detail',
@@ -12,15 +13,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeDetailComponent implements OnInit {
 
-  public employees = [
-    {"id":1, "name":"choniyu", "age":21},
-    {"id":2, "name":"azwan", "age":21},
-    {"id":3, "name":"budi", "age":25},
-    {"id":4, "name":"raharjo", "age":30}
-  ];
-  constructor() { }
+  public employees = [];
+
+  constructor(private _employeeService: EmployeeService) { }
 
   ngOnInit() {
+    this.employees = this._employeeService.getEmployees();
   }
 
 }
