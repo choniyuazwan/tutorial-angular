@@ -1,8 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    {{title}}
+    Routing and Navigation
   </h1>
 </div>
-<employee-list></employee-list>
-<employee-detail></employee-detail>
+<nav>
+  <a routerLink="/list" routerLinkActive="active">List</a>
+  <a routerLink="/detail" routerLinkActive="active">Detail</a>
+  <!-- <button routerLink="/list">List</button>
+  <button routerLink="/detail">Detail</button> -->
+</nav>
+<router-outlet></router-outlet>

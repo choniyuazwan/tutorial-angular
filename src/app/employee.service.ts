@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { IEmployee } from './employee';
 import { Observable } from 'rxjs';
 
@@ -13,5 +13,9 @@ export class EmployeeService {
 
   getEmployees(): Observable<IEmployee[]> {
     return this.http.get<IEmployee[]>(this._url);
+  }
+
+  errorHandler(error: HttpErrorResponse) {
+    return Observable.throw(error.message || "Server error");
   }
 }
