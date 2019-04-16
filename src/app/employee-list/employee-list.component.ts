@@ -4,9 +4,11 @@ import { EmployeeService } from '../employee.service';
 @Component({
   selector: 'employee-list',
   template: `
-    <h2>Employee List</h2>
-    <ul *ngFor="let employee of employees">
-      <li>{{employee.name}}</li>
+    <h3>Employee List</h3>
+    <ul class="items">
+      <li *ngFor="let employee of employees">
+        <span class="badge">{{employee.id}}</span> {{employee.name}}
+      </li>
     </ul>
   `,
   styleUrls: ['./employee-list.component.css']

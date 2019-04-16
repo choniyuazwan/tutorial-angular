@@ -5,8 +5,10 @@ import { EmployeeService } from '../employee.service';
   selector: 'employee-detail',
   template: `
     <h2>Employee Detail</h2>
-    <ul *ngFor="let employee of employees">
-      <li>{{employee.id}}. {{employee.name}} - {{employee.age}}</li>
+    <ul class="items">
+      <li *ngFor="let employee of employees">
+        <span class="badge">{{employee.id}}</span> {{employee.name}} - {{employee.age}}
+      </li>
     </ul>
   `,
   styleUrls: ['./employee-detail.component.css']
