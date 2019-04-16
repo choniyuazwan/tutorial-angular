@@ -7,7 +7,7 @@ import { DepartmentListComponent } from './department-list/department-list.compo
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/list', pathMatch: 'full' },
+  { path: '', redirectTo: '/departments', pathMatch: 'full' },
   { path: 'departments', component: DepartmentListComponent },
   { path: 'departments/:id', component: DepartmentDetailComponent },
   { path: 'employees', component: EmployeeListComponent },
