@@ -9,12 +9,16 @@ import { TestComponent } from './test/test.component';
 
 import { EmployeeService } from './employee.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DepartmentOverviewComponent } from './department-overview/department-overview.component';
+import { DepartmentContactComponent } from './department-contact/department-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    routingComponents
+    routingComponents,
+    DepartmentOverviewComponent,
+    DepartmentContactComponent
   ],
   imports: [
     BrowserModule,
